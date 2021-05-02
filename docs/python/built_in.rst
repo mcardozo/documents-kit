@@ -1,18 +1,16 @@
-Python
+Funciones built-in
 ======================================================================
 
-Funciones Built-in
-----------------------------------------------------------------------
-
+:synopsis: El intérprete de Python tiene una serie de funciones y tipos incluidos en él que están siempre disponibles
 
 La función dir
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 ``dir``: Nos dice todos los métodos que podemos utilizar dentro de un objeto.
 
 
 La función hasattr
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Toma como argumento un objecto y el nombre de un atributo y retorna ``True`` si el objeto tiene el atributo
+----------------------------------------------------------------------
+Toma como argumento un objeto y el nombre de un atributo y retorna ``True`` si el objeto tiene el atributo
 
 .. code-block:: python
 
@@ -27,13 +25,13 @@ Toma como argumento un objecto y el nombre de un atributo y retorna ``True`` si 
 
 
 La función help
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 ``help``: nos imprime en pantalla el docstrings o comentario de ayuda o instrucciones que posee la función.
 Casi todas las funciones en Python las tienen.
 
 
 La función map
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 Ejecuta una función sobre cada uno de los elementos de un iterador. Retorna un lista
 o tupla que son el resultado de esa operación.
 
@@ -52,7 +50,7 @@ Output:
 
 
 La función range
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 Retorna una sucesión de números enteros.
 Cuando se le pasa un único argumento ``n``, la sucesión empieza desde el cero y culmina en ``n-1``.
 
@@ -70,7 +68,7 @@ Si se especifican dos argumentos, el primero pasa a indicar el comienzo de la su
 
 
 La función super
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 La función ``super()`` permite invocar el método de una clase padre desde una clase hija
 
 .. code-block:: python
@@ -89,7 +87,7 @@ La función ``super()`` permite invocar el método de una clase padre desde una 
 
 
 La función zip
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 ``zip`` toma como argumento dos o más objetos iterables(idealmente con la misma
 cantidad de elementos) y retorna un nuevo iterable.
 
@@ -108,7 +106,7 @@ Output:
 
 
 Usando strings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------------
 
    - **upper**: convierte todo el string a mayúsculas
    - **lower**: convierte todo el string a minúsculas

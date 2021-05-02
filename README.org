@@ -1,6 +1,0 @@
-#+Title: Documents Kit
-#+Author: Marisol Cardozo
-
-*** Sobre este repositorio
-
-Este repositorio contiene comandos y utilidades de diferentes tecnologías :rocket:
