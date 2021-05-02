@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Documents kit's documentation!
+Bienvenido a la documentación de Documents kit!
 ======================================================================
 
 .. toctree::
@@ -13,9 +13,7 @@ Welcome to Documents kit's documentation!
    built_in
 
 
-Indices and tables
+Indices y tablas
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
