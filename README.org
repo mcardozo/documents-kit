@@ -1,6 +1,6 @@
 #+Title: Documents Kit
 #+Author: Marisol Cardozo
 
-*** About repository
+*** Sobre este repositorio
 
-This repository contains documents of tecnology tools :rocket:
+Este repositorio contiene comandos y utilidades de diferentes tecnologías :rocket:
