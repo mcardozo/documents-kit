@@ -15,7 +15,7 @@ Instalación
 `Instalación en Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_
 
 
-Ejecutar el comando Docker sin sudo (Opcional)
+Ejecutar el comando Docker sin sudo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 De forma predeterminada, el comando docker solamente puede ejecutarse por el
 usuario root o por un usuario del grupo docker, el cual se crea
