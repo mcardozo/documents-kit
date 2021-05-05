@@ -10,12 +10,6 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import os
-import sys
-
-sys.path.insert(0, os.path.abspath("/app"))
-os.environ["DATABASE_URL"] = "sqlite:///readthedocs.db"
-
 # -- Project information -----------------------------------------------------
 
 project = "Documents Kit"
@@ -47,6 +41,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
+
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = 'sphinx'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

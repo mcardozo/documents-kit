@@ -7,11 +7,17 @@ Bienvenido a la documentación de Documents kit!
 ======================================================================
 
 .. toctree::
-   :maxdepth: 2
    :caption: Python
+   :maxdepth: 2
 
    python/built_in
    python/guia_de_instalacion
+
+.. toctree::
+   :caption: Packages
+   :maxdepth: 2
+
+   packages/docker
 
 
 Indices y tablas
