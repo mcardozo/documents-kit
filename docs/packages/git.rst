@@ -260,6 +260,10 @@ Borrar un rama remota::
 
   $ git push origin --delete <nombre_rama>
 
+Borrar ramas ya mergueadas::
+
+  $ git branch -d `git branch --merged`
+
 Cambiar nombre a una rama::
 
   $ git branch -m <viejo_nombre> <nuevo_nombre>
