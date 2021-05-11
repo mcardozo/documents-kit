@@ -1,37 +1,35 @@
 Funciones built-in
 ======================================================================
 
-:synopsis: El intérprete de Python tiene una serie de funciones y tipos incluidos en él que están siempre disponibles
+:synopsis: El intérprete de Python tiene una serie de funciones y tipos incluidos en él que
+           están siempre disponibles
 
-La función dir
+
+Funciones de orden superior
 ----------------------------------------------------------------------
-``dir``: Nos dice todos los métodos que podemos utilizar dentro de un objeto.
+Funciones que reciben como parámetro a otra función.
 
 
-La función hasattr
-----------------------------------------------------------------------
-Toma como argumento un objeto y el nombre de un atributo y retorna ``True`` si el objeto tiene el atributo
+filter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Recorre toda la lista para devolver uno varios elementos de esta. Sirve para filtrar (devolver)
+elementos específicos en una lista.
 
 .. code-block:: python
 
-   class Rectangulo:
-       def __init__(self, b, h):
-           self.b = b
-           self.h = h
+   my_list = [1, 4, 5, 6, 9]
 
-   rect = Rectangulo(10, 5)
-   print(hasattr(rect, "b"))     # True
-   print(hasattr(rect, "area"))  # False
+   odd = list(filter(lamda x: x%2 != 0, my_list))
 
+Output:
 
-La función help
-----------------------------------------------------------------------
-``help``: nos imprime en pantalla el docstrings o comentario de ayuda o instrucciones que posee la función.
-Casi todas las funciones en Python las tienen.
+.. code:: bash(code)
+
+   >>> [1, 5, 9]
 
 
-La función map
-----------------------------------------------------------------------
+map
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ejecuta una función sobre cada uno de los elementos de un iterador. Retorna un lista
 o tupla que son el resultado de esa operación.
 
@@ -49,7 +47,88 @@ Output:
    >>> [2, 4, 6, 8]
 
 
-La función range
+reduce
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Devuelve un valor haciendo una operación con todos los elementos. Sirve para hacer acumulaciones
+de los elementos de una lista.
+
+Sintaxis: ``filter(funcion, iterable)``
+
+.. code-block:: python
+
+   from functools import reduce
+
+   my_list = [2, 2, 2, 2, 2]
+
+   odd = reduce(lambda a, b: a * b, my_list)
+
+Output:
+
+.. code:: bash(code)
+
+   >>> 32
+
+
+zip
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``zip`` toma como argumento dos o más objetos iterables(idealmente con la misma
+cantidad de elementos) y retorna un nuevo iterable.
+
+.. code-block:: python
+
+   names = ['Morena', 'Bárbara']
+   ages = [18, 25]
+   list(zip(names, ages))
+
+
+Output:
+
+.. code:: bash(code)
+
+   >>> [('Morena', 18), ('Bárbara', 25)]
+
+
+Funciones anónimas: lambda
+----------------------------------------------------------------------
+Son funciones que no tienen un identificardor (nombre), retornan un objeto de tipo función
+que guardalemos en una variable
+
+Sintaxis: ``lambda <parámetro>: <función de una línea>``
+
+.. code-block:: python
+
+   palindrome = lambda string: string == string[::-1]
+   print(palindrome('ana'))
+
+
+dir
+----------------------------------------------------------------------
+``dir``: Nos dice todos los métodos que podemos utilizar dentro de un objeto.
+
+
+help
+----------------------------------------------------------------------
+``help``: nos imprime en pantalla el docstrings o comentario de ayuda o instrucciones que posee la función.
+Casi todas las funciones en Python las tienen.
+
+
+hasattr
+----------------------------------------------------------------------
+Toma como argumento un objeto y el nombre de un atributo y retorna ``True`` si el objeto tiene el atributo
+
+.. code-block:: python
+
+   class Rectangulo:
+       def __init__(self, b, h):
+           self.b = b
+           self.h = h
+
+   rect = Rectangulo(10, 5)
+   print(hasattr(rect, "b"))     # True
+   print(hasattr(rect, "area"))  # False
+
+
+range
 ----------------------------------------------------------------------
 Retorna una sucesión de números enteros.
 Cuando se le pasa un único argumento ``n``, la sucesión empieza desde el cero y culmina en ``n-1``.
@@ -67,7 +146,7 @@ Si se especifican dos argumentos, el primero pasa a indicar el comienzo de la su
    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-La función super
+super
 ----------------------------------------------------------------------
 La función ``super()`` permite invocar el método de una clase padre desde una clase hija
 
@@ -84,25 +163,6 @@ La función ``super()`` permite invocar el método de una clase padre desde una 
 
    b = ClassB()
    b.message()
-
-
-La función zip
-----------------------------------------------------------------------
-``zip`` toma como argumento dos o más objetos iterables(idealmente con la misma
-cantidad de elementos) y retorna un nuevo iterable.
-
-.. code-block:: python
-
-   names = ['Morena', 'Bárbara']
-   ages = [18, 25]
-   list(zip(names, ages))
-
-
-Output:
-
-.. code:: bash(code)
-
-   >>> [('Morena', 18), ('Bárbara', 25)]
 
 
 Usando strings
