@@ -272,6 +272,10 @@ Cambiar nombre a una rama::
 
   $ git push origin <viejo_name>
 
+Actulizar la lista de ramas remotas::
+
+  $ git remote update origin --prune
+
 
 Tags
 -------------------------------------------------------------------
