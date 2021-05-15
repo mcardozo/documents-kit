@@ -37,3 +37,20 @@ Instalación:
    # make altinstall
 
 Listo!
+
+
+Pip
+----------------------------------------------------------------------
+Verifica instalación::
+
+  $ python -m pip --version
+
+Instalar::
+
+  $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+  $ python get-pip.py
+
+Actualizar::
+
+  $ python -m pip install -U pip
