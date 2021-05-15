@@ -18,6 +18,7 @@ Bienvenido a la documentación de Documents kit!
    :maxdepth: 2
 
    packages/docker
+   packages/emacs
    packages/git
    packages/pg_dump
    packages/postgresql
