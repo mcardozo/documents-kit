@@ -20,6 +20,7 @@ Bienvenido a la documentación de Documents kit!
    packages/docker
    packages/git
    packages/pg_dump
+   packages/tmux
 
 
 Indices y tablas
