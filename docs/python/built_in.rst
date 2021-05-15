@@ -91,7 +91,7 @@ Output:
 Funciones anónimas: lambda
 ----------------------------------------------------------------------
 Son funciones que no tienen un identificardor (nombre), retornan un objeto de tipo función
-que guardalemos en una variable
+que se guardarán en una variable
 
 Sintaxis: ``lambda <parámetro>: <función de una línea>``
 
