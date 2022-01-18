@@ -12,6 +12,7 @@ Bienvenido a la documentación de Documents kit!
 
    python/built_in
    python/guia_de_instalacion
+   python/django
 
 .. toctree::
    :caption: Packages
