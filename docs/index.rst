@@ -24,6 +24,7 @@ Bienvenido a la documentación de Documents kit!
    packages/pg_dump
    packages/postgresql
    packages/tmux
+   packages/youtube_dl
 
 
 Indices y tablas
