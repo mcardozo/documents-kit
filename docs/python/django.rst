@@ -192,6 +192,14 @@ Extrar datos::
 
   $ docker-compose run --rm django python manage.py dumpdata --exclude=admin.logentry --exclude=auth.permission --exclude=contenttypes --exclude=sessions --indent 4 > backup.json
 
+Acceder a una base mysql::
+
+  $ docker exec -it <container> mysql -u <user> -h <host> -p <dbname>
+
+Acceder a una base postgresql::
+
+  $ docker exec -it <container> psql <dbname> -U <username>
+
 Acceder a base de datos y extrar un backup psql::
 
   $ echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
@@ -200,4 +208,4 @@ Acceder a base de datos y extrar un backup psql::
 
   $ sudo apt install postgresql-client-12
 
-  $ pg_dump --host=host --port=port --username=postgres --password --dbname=dbname -F c -f backup.sql
+  $ pg_dump -h=host -p=port -U=postgres -d=dbname -F c -f backup.sql
