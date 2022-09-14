@@ -5,6 +5,11 @@
 
 Bienvenido a la documentación de Documents kit!
 ======================================================================
+.. toctree::
+   :caption: Comandos Unix
+   :maxdepth: 2
+
+   unix/archivos
 
 .. toctree::
    :caption: Python
