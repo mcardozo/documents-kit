@@ -21,7 +21,13 @@ Crear un link simbolico a un archivo:
 
 .. code-block:: bash
 
-   $ ln -s file file_link
+   $ ln -s /path/to/file file_link
+
+Remplaza una cadena en un archivo con sed
+
+.. code-block:: bash
+
+   $ sed -i 's/old_name/new_name/g' file.txt
 
 
 Archivos ejecutables
