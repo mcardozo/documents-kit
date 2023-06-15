@@ -10,4 +10,6 @@ Sobre este repositorio
 
 Este repositorio contiene comandos y utilidades de diferentes tecnologías :rocket:
 
-[Documents Kit](http://0.0.0.0:7000/python/snippets.htm)
+`Documents Kit <https://documents-kit.readthedocs.io/es/latest/>`_
+
+`Rst guie <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/references.html>`_
