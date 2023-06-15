@@ -26,7 +26,6 @@ Bienvenido a la documentación de Documents kit!
    packages/docker
    packages/emacs
    packages/git
-   packages/pg_dump
    packages/postgresql
    packages/tmux
    packages/youtube_dl
