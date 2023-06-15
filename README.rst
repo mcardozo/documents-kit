@@ -9,3 +9,5 @@ Sobre este repositorio
 ------------------------------------------------------------
 
 Este repositorio contiene comandos y utilidades de diferentes tecnologías :rocket:
+
+[Documents Kit](http://0.0.0.0:7000/python/snippets.htm)
