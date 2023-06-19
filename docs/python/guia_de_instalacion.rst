@@ -1,11 +1,11 @@
 Guía de instalación
 =====================================================================
 
-:synopsis: Guía de instalación de python 3.8.9
+:synopsis: Guía de instalación de python 3.9.10
 
-Python 3.8.9
+
+Python 3.9.10
 ----------------------------------------------------------------------
-
 Actualizar paquetes e instalar dependecias:
 
 .. code-block:: bash
@@ -35,9 +35,9 @@ Instalación:
 
 Listo!
 
+
 Gestionar multiples versiones
 ----------------------------------------------------------------------
-
 Agregar python3.9 como predeterminado::
 
   $ sudo update-alternatives --config python
@@ -47,6 +47,7 @@ Agregar python3.9 como predeterminado::
   $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
 
   $ sudo update-alternatives --list python
+
 
 Pip
 ----------------------------------------------------------------------
@@ -65,9 +66,8 @@ Actualizar::
   $ python -m pip install -U pip
 
 
- VirtualEnvWrapper
+VirtualEnvWrapper
 ----------------------------------------------------------------------
-
 Instalación::
 
   $ sudo pip install virtualenvwrapper
