@@ -18,6 +18,7 @@ Bienvenido a la documentación de Documents kit!
    python/built_in
    python/guia_de_instalacion
    python/django
+   python/cookiecutter_django
    python/snippets
 
 .. toctree::
