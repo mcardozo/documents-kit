@@ -7,7 +7,14 @@ PostgreSQL es un sistema de gestión de bases de datos objeto-relacional,
 distribuido bajo licencia BSD y con su código fuente disponible libremente.
 
 
-Instalación
+Contenedor docker
+-------------------------------------------------------------------
+Crear un contenedor con postgres::
+
+  $ docker run -d -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -d postgres
+
+
+Instalación local
 -------------------------------------------------------------------
 Agregar repositorio::
 
