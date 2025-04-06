@@ -10,6 +10,7 @@ Bienvenido a la documentación de Documents kit!
    :maxdepth: 2
 
    unix/archivos
+   unix/apt
 
 .. toctree::
    :caption: Python
