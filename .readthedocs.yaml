@@ -8,3 +8,6 @@ language: es
 python:
   install:
     - requirements: requirements.txt
+
+build:
+  image: latest
