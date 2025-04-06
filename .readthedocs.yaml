@@ -10,4 +10,7 @@ python:
     - requirements: requirements.txt
 
 build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.12"
   image: latest
