@@ -6,3 +6,8 @@ sphinx:
 
 # Lenguaje por defecto de la documentación
 language: es
+
+# Requisitos para instalar (opcional, si usás requirements.txt)
+python:
+  install:
+    - requirements: requirements.txt
