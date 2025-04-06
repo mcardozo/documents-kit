@@ -1,13 +1,10 @@
 version: 2
 
-# Ruta al directorio de la documentación
 sphinx:
   configuration: docs/conf.py
 
-# Lenguaje por defecto de la documentación
 language: es
 
-# Requisitos para instalar (opcional, si usás requirements.txt)
 python:
   install:
-    - requirements: requirements.txt
+    - requirements: docs/requirements.txt

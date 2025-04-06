@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Bienvenido a la documentación de Documents kit!
-======================================================================
+===============================================
 .. toctree::
    :caption: Comandos Unix
    :maxdepth: 2
@@ -36,6 +36,6 @@ Bienvenido a la documentación de Documents kit!
 
 
 Indices y tablas
-=====================================================================
+================
 
 * :ref:`search`
