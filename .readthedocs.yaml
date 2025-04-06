@@ -2,15 +2,14 @@ version: 2
 
 sphinx:
   configuration: docs/conf.py
-
-language: es
+  language: es
 
 python:
   install:
     - requirements: requirements.txt
 
 build:
+  image: latest
   os: ubuntu-22.04
   tools:
     python: "3.12"
-  image: latest
