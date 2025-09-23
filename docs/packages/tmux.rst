@@ -49,14 +49,45 @@ Cerrar sesión::
   $ tmux kill-session -t <nombre>
 
 
-
 Ventanas
 -------------------------------------------------------------------
-Dividir la terminal en ventanas horizontales::
+Crear ventanas::
+
+  Ctrl+b c
+
+Ventana siguiente::
+
+  Ctrl+b n
+
+Ventana anterior::
+
+  Ctrl+b p
+
+Menú de ventanas::
+
+  Ctrl+b w
+
+Ir a número de ventana::
+
+  Ctrl+b <num>
+
+Renombrar ventana::
+
+  Ctrl+b ,
+
+Cerrar ventana::
+
+  Ctrl+b &
+
+
+
+Paneles
+-------------------------------------------------------------------
+Dividir la terminal en paneles horizontales::
 
   shortcut: Ctrl + b, %
 
-Dividir la terminal en ventanas verticales::
+Dividir la terminal en paneles verticales::
 
   shortcut: Ctrl + b, ""
 
