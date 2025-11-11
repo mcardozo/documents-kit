@@ -11,6 +11,7 @@ Bienvenido a la documentación de Documents kit!
 
    unix/archivos
    unix/apt
+   unix/file_system_check
 
 .. toctree::
    :caption: Python
