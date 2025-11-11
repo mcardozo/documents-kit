@@ -1,4 +1,4 @@
-Mantenimiento del montaje de ``/home``
+File system check
 =====================================================================
 
 Este procedimiento describe cómo desmontar temporalmente el directorio
