@@ -1,9 +1,9 @@
-apt (advanced package tool) & apt-get
+apt & apt-get
 =====================================================================
 :synopsis: herramienta de línea de comandos que permite instalar, actualizar, eliminar y administrar paquetes en sistemas
 
 
-apt
+apt (advanced package tool)
 ----------------------------------------------------------------------
 
 
