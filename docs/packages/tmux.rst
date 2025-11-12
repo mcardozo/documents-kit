@@ -79,6 +79,10 @@ Cerrar ventana::
 
   Ctrl+b &
 
+Mover ventana::
+
+  :move-window -t 0
+
 
 
 Paneles
