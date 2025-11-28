@@ -58,7 +58,7 @@ Entornos virtuales con venv (recomendado)
 ----------------------------------------------------------------------
 A partir de Python 3.3, la forma estándar de crear entornos virtuales es con ``venv`` (no se usa ``virtualenvwrapper``).
 
-### Crear un entorno local en el proyecto
+Crear un entorno local en el proyecto
 
 Desde la carpeta de tu proyecto::
 
@@ -72,7 +72,7 @@ Desde la carpeta de tu proyecto::
   python -V
   python -m pip -V
 
-### Comandos útiles en el día a día
+Comandos útiles en el día a día
 
 Instalar dependencias::
 
