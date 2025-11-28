@@ -33,6 +33,7 @@ Bienvenido a la documentación de Documents kit!
    packages/mysql
    packages/postgresql
    packages/tmux
+   packages/vim
    packages/youtube_dl
 
 
