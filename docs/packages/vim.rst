@@ -1,10 +1,177 @@
-Vim — Guía práctica definitiva
+===============================
+Vim
 ===============================
 
 Lista compacta, ordenada por tareas. Incluye lo esencial y un bloque de avanzados con lo más
 rescatable de tu doc original, ya depurado.
 
-1) Guardar y salir
+Instalación
+====================================================
+
+1. Requisitos del sistema
+-----------------------------
+
+.. code-block:: bash
+
+   sudo apt update
+   sudo apt install -y vim git curl build-essential \
+       python3 python3-venv python3-pip \
+       ripgrep universal-ctags \
+       nodejs npm
+
+.. note::
+   * ``node`` 18+ funciona; ideal 20+.
+   * ``ripgrep`` y ``universal-ctags`` no son obligatorios, pero útiles
+     con Vim (``:grep``, tags, etc.).
+
+
+2. Instalar vim-plug (gestor de plugins)
+----------------------------------------
+
+.. code-block:: bash
+
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+3. Crear/copiar tu ``~/.vimrc``
+----------------------------------------
+
+Si tenés tu ``.vimrc`` en un repo o backup, copialo a ``~``:
+
+.. code-block:: bash
+
+   cp /ruta/a/tu/backup/.vimrc ~/.vimrc
+
+
+4. Instalar los plugins
+-----------------------
+
+Abrí Vim y ejecutá:
+
+.. code-block:: vim
+
+   :PlugInstall
+
+
+5. Extensiones de coc.nvim
+--------------------------
+
+Para Python (LSP con Pyright):
+
+.. code-block:: vim
+
+   :CocInstall coc-pyright
+
+Para JS/TS (opcional):
+
+.. code-block:: vim
+
+   :CocInstall coc-tsserver coc-eslint coc-prettier
+
+
+6. Configuración mínima de ``coc-settings.json``
+------------------------------------------------
+
+Archivo para Vim clásico: ``~/.vim/coc-settings.json``
+
+.. code-block:: json
+
+   {
+     "workspace.rootPatterns": ["pyproject.toml", "manage.py", ".git", "setup.cfg", "setup.py"],
+     "workspace.workspaceFolderCheckCwd": true,
+
+     "eslint.enable": true,
+     "prettier.enable": true,
+
+     "python.analysis.inlayHints.variableTypes": false,
+     "python.analysis.inlayHints.functionReturnTypes": false,
+     "python.analysis.inlayHints.callArgumentNames": "none",
+     "python.analysis.inlayHints.genericTypes": false
+   }
+
+
+7. Configuración del proyecto (recomendado)
+-------------------------------------------
+
+En el repo de tu proyecto, definí herramientas en ``pyproject.toml``:
+
+.. code-block:: toml
+
+   [tool.black]
+   line-length = 120
+
+   [tool.isort]
+   profile = "black"
+   line_length = 120
+
+   [tool.ruff]
+   line-length = 120
+
+   [tool.mypy]
+   ignore_missing_imports = true
+   # plugins = ["django_stubs_ext.django_plugin"]
+   # django_settings_module = "id.settings"
+
+Opcional para Pyright (si tus módulos viven en ``id/``, ``config/``, etc.):
+crear ``pyrightconfig.json`` en la raíz del repo:
+
+.. code-block:: json
+
+   {
+     "venvPath": ".",
+     "venv": ".venv",
+     "pythonVersion": "3.12",
+     "typeCheckingMode": "basic",
+     "executionEnvironments": [
+       { "root": "./", "extraPaths": ["id", "config", "feature_flags"] }
+     ],
+     "exclude": ["staticfiles", "fixtures", "docs", "requirements", "compose"]
+   }
+
+
+8. Checklist rápido
+-------------------
+
+- Abrí Vim **desde la raíz del repo** (``vim .``) o usá ``:cd /ruta/del/repo``.
+- En un ``.py`` corré ``:CocInfo`` → debe mostrar **pyright: running**.
+- Corré ``:ALEInfo`` → verás **ruff/mypy** como linters y **black/isort** como fixers.
+- ``:verbose nmap gd`` → debe apuntar a ``<Plug>(coc-definition)``.
+- Si usás tmux, hacé que herede el directorio actual (opcional)::
+
+   # ~/.tmux.conf
+   bind c new-window -c "#{pane_current_path}"
+   bind % split-window -h -c "#{pane_current_path}"
+   bind '"' split-window -v -c "#{pane_current_path}"
+   # Recargar:
+   # tmux source-file ~/.tmux.conf
+
+
+Anexos
+======
+
+A) Regenerar tags (ctags) como respaldo (opcional)
+--------------------------------------------------
+
+.. code-block:: vim
+
+   set tags=./.tags;,.git/tags,tags
+   command! -nargs=0 MakeTags !ctags -R -f .tags --languages=Python --python-kinds=-iv id config feature_flags
+   nnoremap <leader>tg :MakeTags<CR>
+
+B) Buscar usos con ripgrep (rápido)
+-----------------------------------
+
+.. code-block:: bash
+
+   rg -n --smart-case -S '\bis_valid_phone\s*\('
+   rg -n --smart-case -S '\bis_valid_phone\s*\(' | wc -l
+
+
+Comandos
+====================================================
+
+1. Guardar y salir
 ------------------
 ::
 
@@ -14,7 +181,7 @@ rescatable de tu doc original, ya depurado.
   :q!           " Salir descartando cambios
   ZZ / ZQ       " Guardar+salir / salir sin guardar
 
-2) Modos
+2. Modos
 --------
 ::
 
@@ -24,7 +191,7 @@ rescatable de tu doc original, ya depurado.
 
 Sugerencia: usa ``gi`` para volver a insertar donde editaste por última vez.
 
-3) Movimiento
+3. Movimiento
 -------------
 ::
 
@@ -38,7 +205,7 @@ Sugerencia: usa ``gi`` para volver a insertar donde editaste por última vez.
   Ctrl-d / Ctrl-u  " Media página abajo / arriba
   Ctrl-f / Ctrl-b  " Página completa abajo / arriba
 
-4) Búsqueda y navegación de resultados
+4. Búsqueda y navegación de resultados
 --------------------------------------
 ::
 
@@ -49,7 +216,7 @@ Sugerencia: usa ``gi`` para volver a insertar donde editaste por última vez.
 
 Tip: ``:set hlsearch incsearch`` para resaltar y buscar incremental.
 
-5) Edición (operador + movimiento)
+5. Edición (operador + movimiento)
 ----------------------------------
 ::
 
@@ -64,7 +231,7 @@ Tip: ``:set hlsearch incsearch`` para resaltar y buscar incremental.
   ~             " Toggle may/min del char
   r / R         " Reemplazar un letra / Reemplazar varias letras
 
-5.1) Text objects (turbo para d/y/c)
+5.1. Text objects (turbo para d/y/c)
 ------------------------------------
 ::
 
@@ -75,7 +242,7 @@ Tip: ``:set hlsearch incsearch`` para resaltar y buscar incremental.
 
 Tip: ``vi)`` selecciona dentro de paréntesis; ``va)`` incluye paréntesis.
 
-6) Sustituciones
+6. Sustituciones
 ----------------
 ::
 
@@ -85,14 +252,14 @@ Tip: ``vi)`` selecciona dentro de paréntesis; ``va)`` incluye paréntesis.
 
 Pro: ``:%s/\<<C-r><C-w>\>/nuevo/gc`` reemplaza la palabra bajo el cursor en todo el archivo.
 
-7) Visual mode
+7. Visual mode
 --------------
 ::
 
   v / V / Ctrl-v   " Carácteres / línea / bloque
   gv               " Re-seleccionar la última selección
 
-8) Buffers, ventanas y pestañas
+8. Buffers, ventanas y pestañas
 -------------------------------
 ::
 
@@ -115,7 +282,7 @@ Pro: ``:%s/\<<C-r><C-w>\>/nuevo/gc`` reemplaza la palabra bajo el cursor en todo
 
 Sugerencia: ``set hidden`` para cambiar de buffer sin guardar.
 
-9) Archivos y navegación
+9. Archivos y navegación
 ------------------------
 ::
 
@@ -125,7 +292,7 @@ Sugerencia: ``set hidden`` para cambiar de buffer sin guardar.
 
 Tip: ``gf`` abre el archivo bajo el cursor si es ruta válida.
 
-10) Registros y portapapeles
+10. Registros y portapapeles
 ----------------------------
 ::
 
@@ -133,7 +300,7 @@ Tip: ``gf`` abre el archivo bajo el cursor si es ruta válida.
   "+y / "+p         " Portapapeles del sistema
   "_d               " Borrar sin afectar el registro "" (black hole)
 
-11) Sangría y formato
+11. Sangría y formato
 ---------------------
 ::
 
@@ -143,14 +310,14 @@ Tip: ``gf`` abre el archivo bajo el cursor si es ruta válida.
 
 Tip: ``:set expandtab shiftwidth=2 tabstop=2`` para espacios en vez de tabs.
 
-12) Macros
+12. Macros
 ----------
 ::
 
   q{r} … q          " Grabar macro en registro {r}
   @{r} / @@         " Ejecutar macro / repetir la última
 
-13) Hechizo (spell)
+13. Hechizo (spell)
 -------------------
 ::
 
@@ -160,7 +327,7 @@ Tip: ``:set expandtab shiftwidth=2 tabstop=2`` para espacios en vez de tabs.
 
 Extra: ``z=`` sugiere correcciones.
 
-14) Quickfix y grep
+14. Quickfix y grep
 -------------------
 ::
 
@@ -169,7 +336,7 @@ Extra: ``z=`` sugiere correcciones.
 
 Alternativa rápida: ``:grep -R "pat" .`` (requiere grep/ag/rg configurado).
 
-15) Recetas útiles
+15. Recetas útiles
 ------------------
 - Cambiar comillas con confirmación: ``:%s/"\(.\{-}\)"/'\1'/gc``
 - Mantener solo selección: seleccionar en Visual y ``:keepjumps '<,'>write! tmp && %d | 0r tmp | bwipe! tmp``
