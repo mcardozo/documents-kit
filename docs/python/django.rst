@@ -68,6 +68,16 @@ Crear modelos a partir de la base de datos::
 
   python manage.py inspectdb > models.py
 
+Ver el SQL de una migración específica::
+
+  $ python manage.py sqlmigrate <app> <numero_migracion>
+
+Guardar el SQL de una migración en un archivo de texto plano::
+
+  $ python manage.py sqlmigrate users 0003 > migration_0003.sql
+
+.. note:: ``sqlmigrate`` solo muestra el SQL, no aplica la migración
+
 Administrador
 ----------------------------------------------------------------------
 Crear superusuario::
