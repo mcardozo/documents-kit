@@ -44,7 +44,7 @@ Salir de una sesión sin cerrarla::
 
   shortcut: Ctrl + b, d
 
-Cerrar sesión::
+Eliminar sesión::
 
   $ tmux kill-session -t <nombre>
 
