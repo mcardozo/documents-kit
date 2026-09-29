@@ -35,6 +35,7 @@ Bienvenido a la documentación de Documents kit!
    packages/postgresql
    packages/tmux
    packages/vim
+   packages/zellij
 
 
 Indices y tablas
